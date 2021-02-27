@@ -2,12 +2,18 @@ import React from 'react'
 
 const Article = () => {
   return (
+    <article>
     <div style={{width:"750x", textAlign:"left",margin:"auto"}}> 
-      <h1>The Statue of Liberty's torch heads to new museum  </h1>
-      
-      <cite>by Kate Farley ( <a href="mailto:kate.farley@nytimes.com">kate.farley@nytimes.com</a> )  </cite>  <br/>
-      November 22, 2018   
-     
+          <article>
+      <header>
+        <h1>The Statue of Liberty&rsquo;s torch heads to new museum</h1>
+        <address>
+          by Kate Farley (
+          <a href="mailto:kate.farley@nytimes.com">kate.farley@nytimes.com</a>)
+          <br />
+        </address>
+        <time datetime="2018-11-22">November 22, 2018 </time>
+      </header>
      <p> The Statue of Liberty's original torch is getting a new home.</p> 
 
       <p>Made of copper and gold so that it would shine bright, the first torch took a beating from the weather and was replaced by a replica in 1984. It's been stored in the statue's pedestal ever since.</p> 
@@ -47,7 +53,7 @@ const Article = () => {
       <li>Total weight of the Statue of Liberty is <b>225 tons (or 450,000 pounds)</b></li>
       </ul>
 
-    </div>
+      </article>
   )
 }
 
