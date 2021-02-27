@@ -3,8 +3,6 @@ import React from 'react'
 const Article = () => {
   return (
     <article>
-    <div style={{width:"750x", textAlign:"left",margin:"auto"}}> 
-          <article>
       <header>
         <h1>The Statue of Liberty&rsquo;s torch heads to new museum</h1>
         <address>
@@ -14,6 +12,7 @@ const Article = () => {
         </address>
         <time datetime="2018-11-22">November 22, 2018 </time>
       </header>
+    
      <p> The Statue of Liberty's original torch is getting a new home.</p> 
 
       <p>Made of copper and gold so that it would shine bright, the first torch took a beating from the weather and was replaced by a replica in 1984. It's been stored in the statue's pedestal ever since.</p> 
