@@ -1,27 +1,23 @@
-.item {
-    border: 1.5px solid  rgb(173, 24, 24);
-    border-radius: 10px;
+.articleListItem{
+    font-size: 25px;
+    color: red;
+    text-decoration: underline red;
+    margin: 0 0 16px 0;
+  }
+  .item {
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 16px;
     background-image: linear-gradient(
         to right,
-        rgb(180, 77, 77),
-        white 15%
+        rgba(200, 20, 20, 0.7),
+        white 20%
     );
-    margin: 1rem 1rem 1.5rem -1.5rem;
-    padding: 0rem 1rem 0.5rem;
-    box-shadow: -2px 10px 10px -1px rgb(102, 102, 102);  
-}
-
-.article {
-    font-family: Arial, Helvetica, sans-serif;; 
-    margin-bottom: 2rem;
-
-}
-
-.title {
-    text-decoration: underline red;
-    color: rgb(223, 24, 24);
-}
-
-.dateTime {
-    font-weight: bold;
-}
+  }
+  
+  .item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+  }
