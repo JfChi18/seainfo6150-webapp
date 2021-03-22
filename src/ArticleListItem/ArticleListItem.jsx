@@ -1,39 +1,35 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import ArticleTextToggleButton from "../ArticleTextToggleButton/ArticleTextToggleButton";
-import styles from "./ArticleListItem.module.css";
+import React, { Fragment, useState } from "react";
+import ArticleTextToggleButton from "../ArticleTextToggleButton/ArticleTextToggleButton.jsx";
+import {Link} from "react-router-dom";
+import styles from './ArticleListItem.module.css';
 
-const ArticleListItem = (props) => {
+const ArticleListItem = ({article}) => {
   const [showDetails, setShowDetails] = useState(false);
-  const [buttonText, setButtonText] = useState("Show more");
+
+  let buttonText = 'Show more';
+
+  if (showDetails) {
+    buttonText = 'Show less';
+  }
 
   const onClick = () => {
     setShowDetails(!showDetails);
-    if(!showDetails) {
-      setButtonText("Show less");
-    } else {
-      setButtonText("Show more");
-    }
   };
 
   return (
-    <li className={styles.item}>
-      <article className={styles.article}>
-        <h2 className={styles.title}>{props.article.title}</h2>
-        {showDetails && 
-          <div>
-            <p>{props.article.shortText}</p>
-            <time className={styles.dateTime} dateTime={props.article.timeStamp}>{props.article.displayDate}</time>
-          </div>
-        } 
-      </article>
-      <ArticleTextToggleButton onClick={onClick} buttonText={buttonText}/>
-    </li>
+    <article className={styles.item}>
+      <Link to={'/articlelist/'+ article.slug}>
+        <h3 className={styles.articleListItem}>{article.title}</h3>
+      </Link>
+      {showDetails && (
+        <Fragment>
+          <b><time dateTime={article.timeStamp}>{article.displayDate}</time></b>
+          <p>{article.shortText}</p>
+        </Fragment>
+      )}
+      <ArticleTextToggleButton buttonText={buttonText} onClick={onClick}/>
+    </article>
   );
-};
-
-ArticleListItem.propTypes = {
-  article: PropTypes.object.isRequired
 };
 
 export default ArticleListItem;
