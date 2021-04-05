@@ -11,5 +11,10 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    grid-column-gap:50px;
+    grid-row-gap: 50px;
+    align-content: center;
+    justify-content: space-between;
 }
+  
   
