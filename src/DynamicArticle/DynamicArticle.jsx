@@ -7,9 +7,9 @@ import ArticleImage from "../ArticleImage/ArticleImage.jsx";
 
 const DynamicArticle = ({article}) => {
   return (
-    <article>
+    <div>
         <Link to="/articlelist"><span className={styles.linkButton}>Back</span></Link>
-        <div className={styles.articleContainer}>
+        <article className={styles.articleContainer}>
         <ArticleImage url={article.image._url} title={article.title}/>
         <h1>{article.title}</h1>
         <address>{article.author} (
@@ -18,9 +18,11 @@ const DynamicArticle = ({article}) => {
         </address>
         <time dateTime={article.timeStamp}>{article.displayDate}</time>
         <br />
+        <div className={styles.content}>
       <HTMLText text={article.text} />
       </div> 
-    </article>
+      </article>
+    </div>
   );
 };
 

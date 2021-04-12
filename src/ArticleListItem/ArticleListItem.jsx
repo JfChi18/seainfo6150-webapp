@@ -17,7 +17,14 @@ const ArticleListItem = (props) => {
       <article className={styles.article}>
         <div className={styles.text}>
         <ArticleImage url={props.article.image._url} title={props.article.title}/>
-          <h2 className={styles.title}>{props.article.title}</h2>
+        <h2 className={styles.title}>
+          <Link 
+            className={styles.title} 
+            to={`/articlelist/${props.article.slug}`}
+          >
+            {props.article.title}
+          </Link>
+        </h2>
           {isTextShowing && (
             <div className={styles.text}>
               <p>{props.article.shortText}</p>
